@@ -47,7 +47,7 @@ def set_colour_2(colour):
     for i in range(BACK_LEDS[0], BACK_LEDS[1]):
         led_strip.set_rgb(i, red, green, blue)
 
-# Function to change color 1 on button press
+# Function to change colour 1 on button press
 def change_colour_1():
     global current_colour_1_index
     current_colour_1_index = (current_colour_1_index + 1) % len(colours)
