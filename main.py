@@ -8,7 +8,7 @@ FRONT_LEDS = (0, 20)
 BACK_LEDS = (20, 40)
 FPS = 60
 
-# Define colours in RGB format (each color is a tuple of three values: red, green, and blue)
+# Define colours in RGB format (each colour is a tuple of three values: red, green, and blue)
 colours = [
     (0, 0, 0),       # Off
     (255, 255, 255), # White
@@ -35,13 +35,13 @@ led_strip = plasma.WS2812(NUM_LEDS, 0, 0, plasma2040.DAT, rgbw=True)
 # Setup current monitoring
 sense = Analog(plasma2040.CURRENT_SENSE, plasma2040.ADC_GAIN, plasma2040.SHUNT_RESISTOR)
 
-# Function to set LED color 1
+# Function to set LED colour 1
 def set_colour_1(colour):
     red, green, blue = colour
     for i in range(FRONT_LEDS[0], FRONT_LEDS[1]):
         led_strip.set_rgb(i, red, green, blue)
 
-# Function to set LED color 2
+# Function to set LED colour 2
 def set_colour_2(colour):
     red, green, blue = colour
     for i in range(BACK_LEDS[0], BACK_LEDS[1]):
@@ -53,7 +53,7 @@ def change_colour_1():
     current_colour_1_index = (current_colour_1_index + 1) % len(colours)
     set_colour_1(colours[current_colour_1_index])
 
-# Function to change color 2 on button press
+# Function to change colour 2 on button press
 def change_colour_2():
     global current_colour_2_index
     current_colour_2_index = (current_colour_2_index + 1) % len(colours)
